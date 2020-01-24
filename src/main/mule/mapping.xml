@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8b2bb723-5828-4e55-8774-26abdeb8eee5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mappingFlow" doc:id="d24d3917-9435-4f77-acc9-c26fcece17d0" >
+		<http:listener doc:name="Listener" doc:id="730d1893-8fb4-4c05-9a17-9a9f92a7971f" config-ref="HTTP_Listener_config" path="map"/>
+		<set-payload value='#[[
+
+  {
+
+    "SVMXC__Service_Order__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Order__c",
+
+      "JCI_SM_EU_Branch__r": {
+
+        "Legal_Entity_Number__c": null,
+
+        "Brnch_Nbr__c": "6069",
+
+        "Id": null,
+
+        "type": "Branch__c"
+
+      },
+
+      "Name":"WO-00044178"
+
+    },
+
+    "SM_EU_JCI_Activity_Type__c": "MIL",
+
+    "SM_EU_Sub_Contracting__c": "No",
+
+    "SM_EU_Expense_Date__c": "2019-02-08",
+
+    "SM_EU_Interface_Status__c": "Processed",
+
+    "type": "SVMXC__Service_Order_Line__c",
+
+    "SVMXC_Case__r": {
+
+      "Status": "Closed",
+
+      "CaseNumber": "00310287",
+
+      "Id": null,
+
+      "type": "Case"
+
+    },
+
+    "SVMXC__Line_Type__c": "Labor",
+
+    "Name": "WL-00197243",
+
+    "SM_EU_Cost_Code_VAL__c": "292U",
+
+    "SVMXC__Total_Line_Price__c": "0.0",
+
+    "SVMXC__Actual_Quantity2__c": "71.0",
+
+    "SM_EU_ERP_ID__c": null,
+
+    "SVMXC__Group_Member__r": {
+
+      "SVMXC__Salesforce_User__r": {
+
+        "JCI_Employee_Number__c": "300000001700477",
+
+        "Id": null,
+
+        "type": "User"
+
+      },
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Group_Members__c"
+
+    },
+
+    "SM_EU_Transaction_Source__c": null,
+
+    "SVMXC__Service_Maintenance_Contract__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Contract__c",
+
+      "SM_EU_ERP_Contract_Number__c": "123"
+
+    },
+
+    "Id": "aCy1b0000000BuxCAE",
+
+    "SM_EU_LOB__c": "13",
+
+    "SM_EU_Org_Code__c": "256",
+
+    "SM_EU_Invoice_Date__c": null
+
+  },
+
+  {
+
+    "SVMXC__Service_Order__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Order__c",
+
+      "JCI_SM_EU_Branch__r": {
+
+        "Legal_Entity_Number__c": null,
+
+        "Brnch_Nbr__c": "6069",
+
+        "Id": null,
+
+        "type": "Branch__c"
+
+      },
+
+      "Name": "WO-00044178"
+
+    },
+
+    "SM_EU_JCI_Activity_Type__c": "REG",
+
+    "SM_EU_Sub_Contracting__c": "No",
+
+    "SM_EU_Expense_Date__c": "2018-01-23",
+
+    "SM_EU_Interface_Status__c": "Processed",
+
+    "type": "SVMXC__Service_Order_Line__c",
+
+    "SVMXC_Case__r": {
+
+      "Status": "Closed",
+
+      "CaseNumber": "00310287",
+
+      "Id": null,
+
+      "type": "Case"
+
+    },
+
+    "SVMXC__Line_Type__c": "Labor",
+
+    "Name": "WL-00195956",
+
+    "SM_EU_Cost_Code_VAL__c": "710",
+
+    "SVMXC__Total_Line_Price__c": "0.0",
+
+    "SVMXC__Actual_Quantity2__c": "3.0",
+
+    "SM_EU_ERP_ID__c": null,
+
+    "SVMXC__Group_Member__r": {
+
+      "SVMXC__Salesforce_User__r": {
+
+        "JCI_Employee_Number__c": "300000001700477",
+
+        "Id": null,
+
+        "type": "User"
+
+      },
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Group_Members__c"
+
+    },
+
+    "SM_EU_Transaction_Source__c": null,
+
+    "SVMXC__Service_Maintenance_Contract__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Contract__c",
+
+      "SM_EU_ERP_Contract_Number__c": "123"
+
+    },
+
+    "Id": "aCy1b0000004DODCA2",
+
+    "SM_EU_LOB__c": "13",
+
+    "SM_EU_Org_Code__c": "257",
+
+    "SM_EU_Invoice_Date__c": null
+
+  },
+
+  {
+
+    "SVMXC__Service_Order__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Order__c",
+
+      "JCI_SM_EU_Branch__r": {
+
+        "Legal_Entity_Number__c": null,
+
+        "Brnch_Nbr__c": "6069",
+
+        "Id": null,
+
+        "type": "Branch__c"
+
+      },
+
+      "Name": "WO-00044178"
+
+    },
+
+    "SM_EU_JCI_Activity_Type__c": "REG",
+
+    "SM_EU_Sub_Contracting__c": "No",
+
+    "SM_EU_Expense_Date__c": null,
+
+    "SM_EU_Interface_Status__c": "Processed",
+
+    "type": "SVMXC__Service_Order_Line__c",
+
+    "SVMXC_Case__r": {
+
+      "Status": "Closed",
+
+      "CaseNumber": "00310287",
+
+      "Id": null,
+
+      "type": "Case"
+
+    },
+
+    "SVMXC__Line_Type__c": "Labor",
+
+    "Name": "WL-00195961",
+
+    "SM_EU_Cost_Code_VAL__c": "185",
+
+    "SVMXC__Total_Line_Price__c": "0.0",
+
+    "SVMXC__Actual_Quantity2__c": null,
+
+    "SM_EU_ERP_ID__c": null,
+
+    "SVMXC__Group_Member__r": {
+
+      "SVMXC__Salesforce_User__r": {
+
+        "JCI_Employee_Number__c": "300000001700477",
+
+        "Id": null,
+
+        "type": "User"
+
+      },
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Group_Members__c"
+
+    },
+
+    "SM_EU_Transaction_Source__c": null,
+
+    "SVMXC__Service_Maintenance_Contract__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Contract__c",
+
+      "SM_EU_ERP_Contract_Number__c": "123"
+
+    },
+
+    "Id": "aCy1b0000004DOXCA2",
+
+    "SM_EU_LOB__c": "13",
+
+    "SM_EU_Org_Code__c": "257",
+
+    "SM_EU_Invoice_Date__c": null
+
+  },
+
+  {
+
+    "SVMXC__Service_Order__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Order__c",
+
+      "JCI_SM_EU_Branch__r": {
+
+        "Legal_Entity_Number__c": null,
+
+        "Brnch_Nbr__c": "6069",
+
+        "Id": null,
+
+        "type": "Branch__c"
+
+      },
+
+      "Name": "WO-00044178"
+
+    },
+
+    "SM_EU_JCI_Activity_Type__c": "REG",
+
+    "SM_EU_Sub_Contracting__c": "No",
+
+    "SM_EU_Expense_Date__c": null,
+
+    "SM_EU_Interface_Status__c": "Processed",
+
+    "type": "SVMXC__Service_Order_Line__c",
+
+    "SVMXC_Case__r": {
+
+      "Status": "Closed",
+
+      "CaseNumber": "00310287",
+
+      "Id": null,
+
+      "type": "Case"
+
+    },
+
+    "SVMXC__Line_Type__c": "Labor",
+
+    "Name": "WL-00195962",
+
+    "SM_EU_Cost_Code_VAL__c": "185",
+
+    "SVMXC__Total_Line_Price__c": "0.0",
+
+    "SVMXC__Actual_Quantity2__c": null,
+
+    "SM_EU_ERP_ID__c": null,
+
+    "SVMXC__Group_Member__r": {
+
+      "SVMXC__Salesforce_User__r": {
+
+        "JCI_Employee_Number__c": "300000001700477",
+
+        "Id": null,
+
+        "type": "User"
+
+      },
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Group_Members__c"
+
+    },
+
+    "SM_EU_Transaction_Source__c": null,
+
+    "SVMXC__Service_Maintenance_Contract__r": {
+
+      "Id": null,
+
+      "type": "SVMXC__Service_Contract__c",
+
+      "SM_EU_ERP_Contract_Number__c": "123"
+
+    },
+
+    "Id": "aCy1b0000004DOcCAM",
+
+    "SM_EU_LOB__c": "13",
+
+    "SM_EU_Org_Code__c": "257",
+
+    "SM_EU_Invoice_Date__c": null
+
+  }
+
+]]' doc:name="Set Payload" doc:id="7593b659-0ed3-4be1-aa03-0837bc8e291e" />
+		<logger level="INFO" doc:name="Logger" doc:id="a80fa700-f5a2-4ce6-8ea3-c4d604444fb5" message="#[payload.SVMXC__Service_Order__r.SM_EU_Org_Code__c]"/>
+		<ee:transform doc:name="Transform Message" doc:id="a827c590-53b6-483a-9c3b-ac0f1917d719" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload filter ($.'SVMXC_Case__r.Status' != "New" and $.'SVMXC_Case__r.Status' != "Work in Progress" ) and ($.SVMXC__Line_Type__c == 'Labor' or $.SVMXC__Line_Type__c == 'Travel') and ($.SM_EU_Sub_Contracting__c != 'Yes')]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="cacf02c9-cd78-484d-b3bc-debf5205ca09" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  "LaborExpenses": {
+    "lines":payload map
+{
+EXTRACT_NAME: "JCI_PA_SVMX_LABOR_EXPENSES_IN",
+RECORD_TYPE: "",
+REQUEST_ID: "",
+RECORD_ID: $.Id default "",
+RECORD_TEXT: 10 ++ "~" ++ ($.SM_EU_Org_Code__c default "") ++ "~" ++ ($.SVMXC__Service_Order__r.JCI_SM_EU_Branch__r.Brnch_Nbr__c default "") ++  "~" ++ ($.Id default "") ++ "~" ++ ($.SVMXC__Group_Member__r.SVMXC__Salesforce_User__r.JCI_Employee_Number__c default "") ++ "~" ++ ($.JCI_SM_EU_Expense_Date__c default "") ++ "~" ++ ($.SVMXC__Expense_Type__c default "") ++ "~" ++ ($.'SVMXC_Case__r.CaseNumber' default "") ++ "~" ++ ($.SM_EU_JCI_ACTIVITY_TYPE__c default "") ++ "~" ++ ($.SVMXC__Actual_Quantity2__c default "") ++ "~" ++ ($.SVMXC__Total_Line_Price__c default "") ++ "~" ++ ($.SVMXC__Actual_Quantity2__c default "") ++ "~" ++ ($.SVMXC__Service_Order__r.Name default "") ++ "~" ++ ($.Name default ""),
+SEQUENCE: 1,
+MESSAGE_ID: uuid(),
+PROCESSED_BY_REQUEST_ID: "",
+PROCESS_TIMESTAMP: "",
+//CREATION_TIMESTAMP:"19-NOV-14 10.08.47.781780000 AM",
+//CREATION_TIMESTAMP: now () as String {format: "yyyy-MM-dd' 'HH:mm:ss"},
+CREATION_TIMESTAMP:now () as String {format: "dd-MMM-yy hh.mm.ss.A a"},
+
+LAST_UPDATE_TIMESTAMP: "",
+STATUS: "",
+CREATED_BY: "I2342",
+LAST_UPDATED_BY_PROCESS: "",
+ERROR_MESSAGE: "",
+ORG_NUMBER: $.ORG_NUMBER default ""
+} }}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="57964633-2929-4a88-b0f3-133d3dd85c71" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
